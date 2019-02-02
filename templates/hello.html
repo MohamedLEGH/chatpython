@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+</head>
+<body>
+
+<script type="text/javascript" charset="utf-8">
+    var socket = io.connect('http://' + document.domain + ':' + location.port);
+    socket.on('connect', function() {
+        socket.emit('my event', {data: 'I\'m connected!'});
+    });
+</script>
+
+messaging service
+
+ <form action="/messages" method="post">
+   <input type="text" placeholder="receiver name" name="username">
+   <textarea placeholder="message to send" name="message"></textarea> 
+   <input type="submit" value="Submit">
+</form> 
+
+
+</body>
+</html>
+
