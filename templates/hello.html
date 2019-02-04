@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
-</head>
-<body>
-
-<script type=text/javascript src="{{
-  url_for('static', filename='js/clientsocket.js') }}"></script>
-
-messaging service
-
- <form onsubmit="sendmessage()" action="/" method="post" name="messagetosend">
-   <select id="mySelect">
-   </select>
-
-   <textarea placeholder="message to send" name="message" id="messagetext"></textarea> 
-</form> 
-<button onclick="sendmessage()">Send message</button> 
-
-
-<p id="receivedmessages"> messageslist: </p>
-
-</body>
+  <head>
+    <title>Mini chat</title>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+  </head>
+  <body>
+    <script type=text/javascript src="{{url_for('static', filename='js/clientsocket.js') }}"></script>
+    
+    <form name="messagetosend" id="myForm">
+      <textarea placeholder="message to send" name="message" id="messagetext"></textarea> 
+    </form>
+    
+    <button onclick="sendmessage()">Send message</button> 
+    <p id="receivedmessages"> messageslist: </p>
+  </body>
 </html>
 
