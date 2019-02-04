@@ -35,4 +35,4 @@ def test_disconnect():
     emit('send_list_members',  {'data': list_members}, broadcast=True)
 
 if __name__ == "__main__":
-    socketio.run(app)
+    socketio.run(app, host="0.0.0.0")

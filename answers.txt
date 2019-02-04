@@ -1,0 +1,22 @@
+Which share of web users will this implementation address? Should it be increased and
+how?
+
+95% I think, because socketio works with old brower
+
+
+How many users can connect to one server?
+
+1024
+
+How can the system support more systems?
+
+multi threading
+clustering
+
+How to reduce the attack surface of the systems?
+
+Using regex for the content of the messages send by the users
+
+Should an authentication mechanism be put in place and if yes, how?
+
+Yes, using Flask-Login

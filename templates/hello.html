@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Mini chat</title>
-    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/node_modules/socket.io-client/dist/socket.io.js')}}"></script>
   </head>
   <body>
     <script type=text/javascript src="{{url_for('static', filename='js/clientsocket.js') }}"></script>
