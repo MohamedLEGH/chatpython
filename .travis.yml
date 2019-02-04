@@ -1,0 +1,10 @@
+language: python
+
+services:
+  - docker
+
+install:
+  - docker build -t chatapp .
+script:
+  - docker run -p 5000:5000 -t chatapp
+
