@@ -11,7 +11,6 @@ test:
   - docker run chatapp python3 test_server.py
   - docker run chatapp coverage run test_server.py
 after_success:
-  - pip install coveralls
   - container=`docker run -dit chatapp /bin/bash`
   - docker exec $container coverage run --omit */dist-packages/* test_server.py
-  - docker exec $container coveralls
+  - docker exec $container -e TRAVIS_JOB_ID="$TRAVIS_JOB_ID" -e TRAVIS_BRANCH="$TRAVIS_BRANCH" coveralls
