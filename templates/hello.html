@@ -5,21 +5,21 @@
 </head>
 <body>
 
-<script type="text/javascript" charset="utf-8">
-    var socket = io.connect('http://' + document.domain + ':' + location.port);
-    socket.on('connect', function() {
-        socket.emit('my event', {data: 'I\'m connected!'});
-    });
-</script>
+<script type=text/javascript src="{{
+  url_for('static', filename='js/clientsocket.js') }}"></script>
 
 messaging service
 
- <form action="/messages" method="post">
-   <input type="text" placeholder="receiver name" name="username">
-   <textarea placeholder="message to send" name="message"></textarea> 
-   <input type="submit" value="Submit">
-</form> 
+ <form onsubmit="sendmessage()" action="/" method="post" name="messagetosend">
+   <select id="mySelect">
+   </select>
 
+   <textarea placeholder="message to send" name="message" id="messagetext"></textarea> 
+</form> 
+<button onclick="sendmessage()">Send message</button> 
+
+
+<p id="receivedmessages"> messageslist: </p>
 
 </body>
 </html>
