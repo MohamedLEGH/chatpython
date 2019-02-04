@@ -6,5 +6,5 @@ services:
 install:
   - docker build -t chatapp .
 script:
-  - docker run -p 5000:5000 -t chatapp
+  - docker run -d -p 5000:5000 -t chatapp
 
