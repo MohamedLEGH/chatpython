@@ -22,7 +22,7 @@ def hellopage():
 
 
 @socketio.on('chatmessage')
-def test_message(message):
+def take_message(message):
     """
     When the user send a message, the server send it to the final receiver
     """
@@ -36,7 +36,7 @@ def test_message(message):
 
 
 @socketio.on('connect')
-def test_connect():
+def connect():
     """
     When a new user connect to the server, the server add his id to the list of id
     """
@@ -44,7 +44,7 @@ def test_connect():
     emit('send_list_members', {'data': list_members}, broadcast=True)
 
 @socketio.on('disconnect')
-def test_disconnect():
+def disconnect():
     """
     When a new user disconnect from the server, the server remove his id to the list of id
     """
