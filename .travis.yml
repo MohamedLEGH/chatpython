@@ -13,6 +13,6 @@ test:
 after_success:
   - pip install coveralls
   - container=`docker run -dit chatapp /bin/bash`
-  - docker exec $container coverage run test_server.py
-  - docker cp $container:/app/.coverage ./
+  - docker exec $container coverage run --omit */dist-packages/* test_server.py
+  - docker cp $container:/app/.coverage .
   - coveralls
