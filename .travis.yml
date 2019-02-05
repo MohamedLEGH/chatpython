@@ -8,8 +8,8 @@ before_script:
   - cd surf-2.0 && make clean install
 
 install:
-  - docker build -t chatapp
-  
+  - docker build -t chatapp .
+
 script:
   - docker run -d -p 5000:5000 -t chatapp
   - surf localhost:5000 &
