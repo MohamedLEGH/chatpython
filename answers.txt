@@ -1,12 +1,17 @@
 Which share of web users will this implementation address? Should it be increased and
 how?
 
-95% I think, because socketio works with old brower
+95% I think, because socketio works with old browser.
 
+It will be difficult to increase this number.
 
 How many users can connect to one server?
 
-1024
+depends on the browser capability of the users.
+Socketio use websockets or short polling or long polling depending of the browser client.
+
+If all clients use websockets, a lot of them can connect at the same time on the server (several thousands)
+else, only a hundred of users will be able to connect.
 
 How can the system support more systems?
 

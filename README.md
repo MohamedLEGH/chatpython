@@ -8,18 +8,6 @@ A simple web chat with python, flask and socketio
 git clone https://github.com/MohamedLEGH/chatpython
 ```
 
-# Install surf browser
-
-```
-cd chatpython
-
-tar xvf surf-2.0.tar.gz
-
-cd surf-2.0
-
-make clean install
-```
-
 # Build
 
 (need docker)
@@ -36,8 +24,6 @@ docker build -t chatpython .
 cd chatpython
 
 docker run -d -p 5000:5000 chatpython
-
-./surf localhost:5000 &
 ```
 
 # Test
